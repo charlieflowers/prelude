@@ -14,8 +14,7 @@ ede-projects.el
 custom.el
 places
 .smex-items
-savefile/
-/prelude-modules.el
+savefile
 projectile-bookmarks.eld
 session*
 .cask
