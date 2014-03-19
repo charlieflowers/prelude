@@ -6,6 +6,8 @@
 (require 'evil)
 (evil-mode 1)
 
+(define-key emacs-lisp-mode-map (kbd "C-x C-a") 'pp-macroexpand-last-sexp)
+
 ;; This beautiful stuff right here is from metasandwich.com. Deals with dashes and camel humps!
 (evil-define-motion evil-little-word (count)
   :type exclusive
