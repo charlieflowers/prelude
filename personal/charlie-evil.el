@@ -51,3 +51,19 @@
 ;; These are key combos I have chosen personally.
 (define-key evil-normal-state-map "g1" 'delete-other-windows) ;; Like emacs C-x 1 (I hope)
 (define-key evil-normal-state-map "gb" 'ido-switch-buffer)    ;; Hopefully same as C-x b
+(define-key evil-normal-state-map "gf" 'prelude-recentf-ido-find-file)
+
+; Makes gr set up for search and replace.
+(define-key evil-normal-state-map (kbd "g r") (lambda () (evil-ex "%s/"))) ;; this one doesnt work yet
+
+(defun my-save ()
+  (if (buffer-file-name)
+      (evil-save (buffer-file-name) 42)))
+
+(define-key evil-normal-state-map (kbd "g p") 'projectile-find-file)
+(define-key evil-normal-state-map (kbd "g s") 'projectile-grep)
+(define-key evil-normal-state-map (kbd "g a") 'evil-ace-jump-char-mode)
+(define-key evil-normal-state-map (kbd "SPC") 'save-buffer)
+
+; save the buffer when i exit insert mode
+(add-hook 'evil-insert-state-exit-hook 'save-buffer)
