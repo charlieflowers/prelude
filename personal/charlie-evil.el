@@ -6,6 +6,9 @@
 (require 'evil)
 (evil-mode 1)
 
+;; These next line gives me TAB back in Coffeescript mode!
+(define-key evil-motion-state-map "\t" nil)
+
 (define-key emacs-lisp-mode-map (kbd "C-x C-a") 'pp-macroexpand-last-sexp)
 
 ;; This beautiful stuff right here is from metasandwich.com. Deals with dashes and camel humps!
