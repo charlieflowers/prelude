@@ -11,7 +11,6 @@
 (global-set-key "\C-cz" 'show-file-name)
 
 (setq tab-width 2)
-;; (define-key map (kbd "<tab>") 'coffee-indent-shift-right)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -20,6 +19,13 @@
  '(coffee-tab-width 2))
 
 (setq evil-want-C-i-jump nil)
+
+; Makes gr set up for search and replace.
+(define-key evil-normal-state-map (kbd "g r") (lambda () (evil-ex "%s/")))
+
+(define-key evil-normal-state-map (kbd "g p") 'projectile-find-file)
+(define-key evil-normal-state-map (kbd "g s") 'projectile-grep)
+(define-key evil-normal-state-map (kbd "g a") 'evil-ace-jump-char-mode)
 
 ;; (add-to-list 'load-path "/path/to/ack-and-a-half")
 ;; (require 'ack-and-a-half)
