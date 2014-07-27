@@ -64,6 +64,7 @@
 (define-key evil-normal-state-map (kbd "g s") 'projectile-grep)
 (define-key evil-normal-state-map (kbd "g a") 'evil-ace-jump-char-mode)
 (define-key evil-normal-state-map (kbd "SPC") 'save-buffer)
+(define-key evil-normal-state-map (kbd "g m") 'magit-status)
 
 ; save the buffer when i exit insert mode
 (add-hook 'evil-insert-state-exit-hook 'save-buffer)
