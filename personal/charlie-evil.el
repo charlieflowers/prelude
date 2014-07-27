@@ -52,6 +52,12 @@
 (define-key evil-normal-state-map "g1" 'delete-other-windows) ;; Like emacs C-x 1 (I hope)
 (define-key evil-normal-state-map "gb" 'ido-switch-buffer)    ;; Hopefully same as C-x b
 (define-key evil-normal-state-map "gf" 'prelude-recentf-ido-find-file)
+(define-key evil-normal-state-map "gz" 'prelude-indent-defun)
+(define-key evil-normal-state-map "gc" 'prelude-ido-goto-symbol)
+(define-key evil-normal-state-map "g4" 'prelude-duplicate-current-line-or-region)
+(define-key evil-normal-state-map (kbd "g.") 'prelude-duplicate-and-comment-current-line-or-region)
+(define-key evil-normal-state-map "g-" 'goto-last-change)
+(define-key evil-normal-state-map "g=" 'goto-last-change-reverse)
 
 ; Makes gr set up for search and replace.
 (define-key evil-normal-state-map (kbd "g r") (lambda () (evil-ex "%s/"))) ;; this one doesnt work yet
