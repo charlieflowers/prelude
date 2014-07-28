@@ -58,19 +58,29 @@
 (define-key evil-normal-state-map (kbd "g.") 'prelude-duplicate-and-comment-current-line-or-region)
 (define-key evil-normal-state-map "g-" 'goto-last-change)
 (define-key evil-normal-state-map "g=" 'goto-last-change-reverse)
+(define-key evil-normal-state-map (kbd "g p") 'projectile-find-file)
+(define-key evil-normal-state-map (kbd "g s") 'projectile-grep)
+(define-key evil-normal-state-map (kbd "g a") 'evil-ace-jump-char-mode)
+(define-key evil-normal-state-map (kbd "g m") 'magit-status)
 
-; Makes gr set up for search and replace.
-(define-key evil-normal-state-map (kbd "g r") (lambda () (evil-ex "%s/"))) ;; this one doesnt work yet
+; Now, transitioning to space as my leader (of course, g remains available too!)
+(define-key evil-normal-state-map (kbd "SPC 1") 'delete-other-windows) ;; Like emacs C-x 1 (I hope)
+(define-key evil-normal-state-map (kbd "SPC b") 'ido-switch-buffer)    ;; Hopefully same as C-x b
+(define-key evil-normal-state-map (kbd "SPC f") 'prelude-recentf-ido-find-file)
+(define-key evil-normal-state-map (kbd "SPC z") 'prelude-indent-defun)
+(define-key evil-normal-state-map (kbd "SPC c") 'prelude-ido-goto-symbol)
+(define-key evil-normal-state-map (kbd "SPC 4") 'prelude-duplicate-current-line-or-region)
+(define-key evil-normal-state-map (kbd "SPC .") 'prelude-duplicate-and-comment-current-line-or-region)
+(define-key evil-normal-state-map (kbd "SPC -") 'goto-last-change)
+(define-key evil-normal-state-map (kbd "SPC =") 'goto-last-change-reverse)
+(define-key evil-normal-state-map (kbd "SPC p") 'projectile-find-file)
+(define-key evil-normal-state-map (kbd "SPC s") 'projectile-grep)
+(define-key evil-normal-state-map (kbd "SPC a") 'evil-ace-jump-char-mode)
+(define-key evil-normal-state-map (kbd "SPC m") 'magit-status)
 
 (defun my-save ()
   (if (buffer-file-name)
       (evil-save (buffer-file-name) 42)))
-
-(define-key evil-normal-state-map (kbd "g p") 'projectile-find-file)
-(define-key evil-normal-state-map (kbd "g s") 'projectile-grep)
-(define-key evil-normal-state-map (kbd "g a") 'evil-ace-jump-char-mode)
-(define-key evil-normal-state-map (kbd "SPC") 'save-buffer)
-(define-key evil-normal-state-map (kbd "g m") 'magit-status)
 
 ; save the buffer when i exit insert mode
 (add-hook 'evil-insert-state-exit-hook 'save-buffer)
