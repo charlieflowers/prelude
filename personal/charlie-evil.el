@@ -10,6 +10,8 @@
 (define-key evil-motion-state-map "\t" nil)
 
 (define-key emacs-lisp-mode-map (kbd "C-x C-a") 'pp-macroexpand-last-sexp)
+(define-key evil-normal-state-map (kbd "C-x s") 'prelude-ido-goto-symbol) ; this blocks Cx s so I can use spc spc
+(define-key evil-normal-state-map (kbd "C-x C-s") 'prelude-ido-goto-symbol) ; this blocks Cx Cs so I can use spc spc
 
 ;; This beautiful stuff right here is from metasandwich.com. Deals with dashes and camel humps!
 (evil-define-motion evil-little-word (count)
@@ -69,6 +71,7 @@
 (define-key evil-normal-state-map (kbd "SPC f") 'prelude-recentf-ido-find-file)
 (define-key evil-normal-state-map (kbd "SPC z") 'prelude-indent-defun)
 (define-key evil-normal-state-map (kbd "SPC c") 'prelude-ido-goto-symbol)
+(define-key evil-normal-state-map (kbd "SPC d") 'evil-goto-definition)
 (define-key evil-normal-state-map (kbd "SPC 4") 'prelude-duplicate-current-line-or-region)
 (define-key evil-normal-state-map (kbd "SPC .") 'prelude-duplicate-and-comment-current-line-or-region)
 (define-key evil-normal-state-map (kbd "SPC -") 'goto-last-change)
@@ -77,7 +80,12 @@
 (define-key evil-normal-state-map (kbd "SPC s") 'projectile-grep)
 (define-key evil-normal-state-map (kbd "SPC a") 'evil-ace-jump-char-mode)
 (define-key evil-normal-state-map (kbd "SPC m") 'magit-status)
+(define-key evil-normal-state-map (kbd "SPC SPC") 'save-buffer)
 
+; This is an attempt to get the "n" key back in grep mode.
+;; (define-key ag-mode-map (kbd "n") 'evil-search-next)
+
+; space space saves
 (defun my-save ()
   (if (buffer-file-name)
       (evil-save (buffer-file-name) 42)))
