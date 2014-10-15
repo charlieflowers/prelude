@@ -21,11 +21,11 @@
 (setq evil-want-C-i-jump nil)
 
 ; Makes gr set up for search and replace.
-(define-key evil-normal-state-map (kbd "g r") (lambda () (evil-ex "%s/")))
+;; (define-key evil-normal-state-map (kbd "g r") (lambda () (evil-ex "%s/")))
 
-(define-key evil-normal-state-map (kbd "g p") 'projectile-find-file)
-(define-key evil-normal-state-map (kbd "g s") 'projectile-grep)
-(define-key evil-normal-state-map (kbd "g a") 'evil-ace-jump-char-mode)
+;; (define-key evil-normal-state-map (kbd "g p") 'projectile-find-file)
+;; (define-key evil-normal-state-map (kbd "g s") 'projectile-grep)
+;; (define-key evil-normal-state-map (kbd "g a") 'evil-ace-jump-char-mode)
 
 ;; (add-to-list 'load-path "/path/to/ack-and-a-half")
 ;; (require 'ack-and-a-half)
