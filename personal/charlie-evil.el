@@ -43,7 +43,7 @@
 (loop for (mode . state) in '((inferior-emacs-lisp-mode      . emacs)
                               (pylookup-mode                 . emacs)
                               (cider-repl-mode               . emacs)
-                              (stacktrace-mode               . emacs)
+                              (cider-stacktrace-mode         . emacs)
                               (comint-mode                   . emacs)
                               (ebib-entry-mode               . emacs)
                               (ebib-index-mode               . emacs)
